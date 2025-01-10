@@ -1,0 +1,436 @@
+/* Updated CSS with Pink and White Theme */
+header {
+  background-color: #ff69b4;
+}
+
+.hero .btn {
+  background-color: #ff69b4;
+  color: #fff;
+}
+
+
+.btn:hover {
+  background-color: #ff69b4cb;
+  color: #fff;
+}
+
+footer {
+  background-color: #ff69b4;
+}
+
+#categories h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333; /* Dark text color for contrast */
+}
+
+#categories h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 12px;
+}
+
+
+
+.hero {
+  position: relative;
+  padding: 100px 0;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff4081, #e91e63);
+  opacity: 0.3;
+  animation: wavesMove 3s ease-in-out forwards;
+}
+
+@keyframes wavesMove {
+  0% {
+      transform: translateX(-100%) skewX(45deg);
+  }
+  /* 50% {
+      transform: translateX(100%) skewX(45deg);
+  } */
+  100% {
+      transform: translateX(0%) skewX(45deg); /* Stop at the center */
+  }
+}
+
+.hero h2, .hero p, .hero .btn {
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  background-color: #ff4081;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e91e63;
+  transform: scale(1.05);
+}
+
+@media (max-width: 576px) {
+  .hero::before {
+    width: 110%;
+  }
+}
+
+
+
+
+
+
+/* Category Container */
+.category-container {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  justify-content: flex-start;
+}
+
+.category-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Category Card */
+.category-card {
+  flex: 0 0 calc(47% - 12px);
+  max-width: calc(47% - 12px);
+  background: #ff69b4; /* Light pink background */
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: #ff85c0;
+  border-color: #ff99cc;
+}
+
+.category-card img {
+  width: 80%; /* Ensure the image fits within the card */
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px auto;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+
+/* Container for Horizontal Scroll on Mobile */
+.category-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping on mobile */
+  gap: 12px; /* Space between cards */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 10px; /* Optional: Add padding for better spacing */
+  scroll-snap-type: x mandatory; /* Smooth scrolling experience */
+}
+
+.category-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for better aesthetics */
+}
+
+.category-card {
+  scroll-snap-align: center; /* Center cards during scrolling */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .category-container {
+    flex-wrap: wrap;
+    overflow-x: unset; /* Disable scrolling for larger screens */
+    justify-content: center; /* Center align cards */
+  }
+
+  .category-card {
+    flex: 0 0 calc(20% - 20px); /* Adjust card size for larger screens */
+    max-width: calc(20% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .category-card {
+    flex: 0 0 calc(40% - 12px); /* Show 2 and a half cards on small screens */
+    max-width: calc(40% - 12px);
+  }
+}
+
+
+
+
+  /* Product Card */
+  .product-card .card {
+    background: #fff; /* White background for a clean and professional look */
+    border-radius: 15px;
+    /* border: 1px solid #ff66b2; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .product-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .product-card .card-body h5 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333; /* Darker text for better readability */
+  }
+  
+  .product-card .card-body p {
+    font-size: 1rem;
+    color: #555; /* Subtle text color */
+    margin-bottom: 20px;
+  }
+  
+  .product-card .card-body .btn {
+    background-color: #ff66b2; /* Pink button */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .product-card .card-body .btn:hover {
+    background-color: #e60073; /* Darker pink on hover */
+    color: #fff;
+  }
+  
+  /* Product Card Hover Effects */
+  .product-card .card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    border-color: #ff66b2; /* Pink border on hover */
+  }
+  
+  /* Round the image corners */
+  .product-card .card-img-top {
+    border-radius: 15px 15px 0 0; /* Round the image corners to match the card's rounded top corners */
+    object-fit: cover;
+  }
+  
+  /* Product Images */
+  .product-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .product-images img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  #products .btn {
+    background-color: #ff66b2;
+  }
+  
+  #products .btn:hover {
+    color: #fff;
+  }
+  
+  @media (max-width: 576px) {
+    .product-images {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .product-images img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+
+/* About Us Section Styles */
+.about-us {
+  background-color: #fff;  /* Light background color to contrast with the footer */
+  color: #333;
+}
+
+.about-us .section-title {
+  font-size: 2.5rem;
+  color: #e91e63;  /* Same color as the footer */
+}
+
+.about-us .lead {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.about-us .row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-us .col-md-4 {
+  margin-bottom: 30px;
+}
+
+.about-us h4 {
+  font-size: 1.5rem;
+  color: #e91e63;  /* Same color for headings as the section title */
+}
+
+.about-us p {
+  color: #555;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-us .row {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* FAQ Section Styles */
+.faq-section {
+  background-color: #fdf1f9; /* Soft pink background */
+  padding: 50px 0;
+}
+
+.faq-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #d63384; /* Vibrant pink color */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border: 1px solid #e3a6c9; /* Light pink border */
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #ffffff; /* White background for contrast */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item:hover {
+  background-color: #ffe3ef; /* Slightly darker pink for hover */
+  border-color: #d63384; /* Vibrant pink for hover effect */
+  transition: 0.3s ease;
+}
+
+.faq-item h5 {
+  font-size: 1.2rem;
+  color: #d63384; /* Consistent pink for titles */
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #555555; /* Neutral text color */
+  line-height: 1.6;
+}
+
+.faq-item i {
+  color: #d63384; /* Icon color matching theme */
+  margin-right: 8px;
+}
+
+.faq-divider {
+  border-top: 2px solid #d63384; /* Thick pink divider for sections */
+  margin: 30px 0;
+}
+
+/* FAQ Accordion Styles */
+.faq-accordion .accordion-item {
+  border: none;
+}
+
+.faq-accordion .accordion-header button {
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #ffffff; /* White background */
+  color: #d63384; /* Pink text for accordion headers */
+  border: 1px solid #e3a6c9; /* Light pink border */
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-accordion .accordion-header button:hover,
+.faq-accordion .accordion-header button:focus {
+  background-color: #ffe3ef; /* Soft pink for hover */
+  color: #d63384; /* Maintain text color */
+  border-color: #d63384; /* Border matches hover */
+  transition: 0.3s ease;
+}
+
+.faq-accordion .accordion-body {
+  font-size: 1rem;
+  color: #555555; /* Neutral text */
+  background-color: #ffffff; /* White body */
+  border: 1px solid #e3a6c9; /* Border matches theme */
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: -1px;
+}
+
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.search-container input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff4081;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #ff4081;
+}
+
