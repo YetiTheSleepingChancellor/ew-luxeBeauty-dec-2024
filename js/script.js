@@ -21,3 +21,18 @@ function openProductModal(title, description, variants, imageUrl) {
     const modal = new bootstrap.Modal(document.getElementById('productModal'));
     modal.show();
   }
+
+
+
+
+  // for search
+
+  function performSearch() {
+    const query = document.getElementById('searchInput').value;
+    if (query) {
+      alert(`You searched for: "${query}"`);
+      // Here you can handle the search functionality, like making a request to a server.
+    } else {
+      alert('Please enter a search query!');
+    }
+  }
